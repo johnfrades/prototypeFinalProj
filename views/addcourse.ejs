@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Course</title>
+</head>
+<body>
+
+
+<h1>Add course</h1>
+
+
+<form action="/addcourse" method="POST">
+
+<label>Course:</label>	
+<input type="text" name="thecourse">
+
+<button>Submit new course</button>
+
+
+</form>
+
+<h1>Add subject</h1>
+
+<form action='/addsubject' method="POST">
+	<select name="subjectadd">
+		<% theCourse.forEach(function(course){ %>
+			<option value="<%= course._id %>">
+				<%= course.thecourse %>	
+			</option>
+		<% })%>
+	</select>
+
+<label>Subject</label>
+<input type="text" name="newSubject">
+
+<button>Submit New Subject</button>
+</form>
+
+
+
+
+<h1>
+	<a href="/addstudent">Add student</a>
+</h1>
+
+
+</body>
+</html>

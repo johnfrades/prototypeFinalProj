@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Profile</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+
+
+
+
+<select>
+	<% theCourses.forEach(function(course){ %>
+		<option><%= course.thecourse %></option>
+	<% }); %>
+</select>
+
+
+<% for(k = 0; k < theCourses.length; k++){ %>
+
+	<select>
+		<option><%= theCourses[k].thecourse %></option>
+	</select>
+
+	<select>
+	<% for(i = 0; i < theCourses[k].thesubjects.length; i++){ %>
+		<option><%= theCourses[k].thesubjects[i].subjects%></option>
+	<% } %>
+	</select>
+<% } %>
+
+
+
+
+
+
+
+
+<form>
+<select>
+<% for(i = 0; i < theCourses.length; i++){ %>
+	<option><%= theCourses[i].thecourse %></option>	
+<% } %>
+</select>
+
+<select>
+	<% theCourses.forEach(function(course){ %>
+		<% course.thesubjects.forEach(function(subject){ %>
+			<option><%= subject.subjects%> </option>
+		<% }) %>
+	<% }); %>
+</select>
+</form>
+
+
+
+
+<!-- 
+<select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Pick one:</option>
+    <option value="/addstudent">Google</option>
+    <option value="/">Add subject</option>
+    <option value="https://www.yahoo.com">Yahoo</option>
+</select>
+ -->
+
+
+<h1>
+	<a href="/">GO BACK</a>
+</h1>
+
+<script type="text/javascript" src="jquery-3.1.0.js"></script>
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
