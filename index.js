@@ -12,8 +12,8 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
 
-//mongoose.connect('mongodb://localhost/sampledb');
-mongoose.connect('mongodb://admin:admin@ds137197.mlab.com:37197/theproject');
+mongoose.connect('mongodb://localhost/sampledb');
+// mongoose.connect('mongodb://admin:admin@ds137197.mlab.com:37197/theproject');
 
 
 var personSchema = new mongoose.Schema({
@@ -127,6 +127,6 @@ app.post('/addsubject', function(req, res){
 
 
 
-app.listen(process.env.PORT, function(req, res){
-	console.log('Server started');
+app.listen('3000', function(req, res){
+	console.log('Server started at PORT 3000');
 });
